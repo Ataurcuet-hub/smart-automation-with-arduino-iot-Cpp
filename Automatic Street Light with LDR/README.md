@@ -32,5 +32,5 @@ This project operates based on ambient light intensity:
 ---
 ## 🔌 Circuit Diagram & Files
 
-* Code / Simulation file: [`LDR_Automatic Street Light.pdsprj`](./LDR_Automatic%20Street%20Light.pdsprj)
+* Code / Simulation file: [`arduino code`](./automatic_street_light_with_ldr1.ino)
 * Demonstration Video: [`LDR_Automatic Street Light.mp4`](./LDR_Automatic%20Street%20Light.mp4)
