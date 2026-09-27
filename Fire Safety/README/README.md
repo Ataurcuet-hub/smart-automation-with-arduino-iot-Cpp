@@ -1,8 +1,11 @@
 :::Fire or Smoke Safety Automation::::
 A smart gas detection and multi-level alert system that monitors smoke or gas levels in real-time using an analog sensor (MQ-series) and dynamically controls multiple output indicators based on safety thresholds.
 
-📹 Video Demo
-🎥 Watch Demonstration: Fire or SMoke Safety Automation.mp4
+
+### 🔌 Circuit Diagram & Files
+
+* 💻 **Code / Source File:** [fire_safety_automation1.ino](./fire_safety_automation1.ino)
+* 📹 **Demonstration Video:** [Fire or SMoke Safety Automation.mp4](./Fire%20or%20SMoke%20Safety%20Automation.mp4).
 
 ⚙️ Working Principle
 This project operates based on real-time gas threshold values using non-blocking millis() timing logic:
@@ -24,7 +27,5 @@ Current Limiting Resistors (220Ω)
 
 Breadboard & Connecting Wires
 
-🔌 Circuit Diagram & Files
-💻 Code / Source File: [./fire_safety_automation1.ino]
 
-📹 Demonstration Video: [./Fire or SMoke Safety Automation.mp4]
+
