@@ -25,6 +25,6 @@ Current Limiting Resistors (220Ω)
 Breadboard & Connecting Wires
 
 🔌 Circuit Diagram & Files
-💻 Code / Source File: fire_safety_automation1.ino
+💻 Code / Source File: [./fire_safety_automation1.ino]
 
-📹 Demonstration Video: Fire or SMoke Safety Automation.mp4
+📹 Demonstration Video: [./Fire or SMoke Safety Automation.mp4]
