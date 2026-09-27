@@ -29,3 +29,17 @@ Breadboard & Connecting Wires
 
 
 
+Project demo: https://github.com/user-attachments/assets/949179ac-b626-4186-baf4-9d35bb38ab14
+
+
+project implementation demo: 
+
+https://github.com/user-attachments/assets/736b894e-35a5-42e7-99f8-af806c6681f3
+
+https://github.com/user-attachments/assets/4c0bbfe4-d7b7-49df-a876-09080affe128
+
+
+
+
+
+
