@@ -1,31 +1,66 @@
-:::Fire or Smoke Safety Automation::::
-A smart gas detection and multi-level alert system that monitors smoke or gas levels in real-time using an analog sensor (MQ-series) and dynamically controls multiple output indicators based on safety thresholds.
+:# 🐔 Smart Poultry Farm Climate Control System
+
+Demo Video: 
+
+https://github.com/user-attachments/assets/e2b7d6d1-c1f3-48dc-9a04-4266bc75ac04
 
 
-### 🔌 Circuit Diagram & Files
-
-* 💻 **Code / Source File:** [fire_safety_automation1.ino](./fire_safety_automation1.ino)
-* 📹 **Demonstration Video:** [Fire or SMoke Safety Automation.mp4](./Fire%20or%20SMoke%20Safety%20Automation.mp4).
-
-⚙️ Working Principle
-This project operates based on real-time gas threshold values using non-blocking millis() timing logic:
-
-🟢 Safe Zone (Gas < 500): Normal air quality. All indicator LEDs and buzzer alarms remain completely OFF.
-
-🟡 Warning Zone (500 ≤ Gas ≤ 700): Moderate smoke/gas level detected. Triggers a slow alert pulse (toggling outputs every 500 ms).
-
-🔴 Critical Danger Zone (Gas > 700): High concentration of gas/smoke detected. Escalates to a rapid alarm pulse (toggling outputs every 50 ms) for urgent evacuation.
-
-🛠️ Components Required
-Arduino Board (e.g., Uno / Nano)
-
-Gas / Smoke Sensor (e.g., MQ-2 / MQ-5 / MQ-135)
-
-LEDs (x5) or Buzzer & LED combinations
-
-Current Limiting Resistors (220Ω)
-
-Breadboard & Connecting Wires
+COde file: 💻 **Code / Source File:** [smart_poultry_farm_with_temp_sensor1.ino](./smart_poultry_farm_with_temp_sensor1.ino)
 
 
 
+An Automated Temperature Monitoring and Climate Control Solution for Poultry Farming using Arduino Uno and TMP36 Sensor.
+
+---
+
+## 📌 Project Overview
+Maintaining an optimal temperature in poultry farms is crucial for the health, growth, and productivity of birds, especially during seasonal changes like winter. 
+
+This project provides an automated solution using an **Arduino Uno** and a **TMP36 Temperature Sensor**. When the ambient temperature drops below a safe threshold (**≤ 26°C**), the system automatically triggers heating/light units to maintain warmth. Additionally, a **buzzer alert** sounds momentarily when heating is initiated to notify farm operators.
+
+---
+
+## ⚡ Key Features
+* **Automated Heating Control:** Automatically turns ON light bulbs/heating relays when temperature drops to **26°C or lower**.
+* **Overheat Protection:** Turns OFF heating units when temperature exceeds **26°C** to prevent heat stress.
+* **Smart Audio Notification:** Generates a short single-beep alert via buzzer when heating turns on, avoiding continuous annoying noise.
+* **Real-time Serial Monitoring:** Continuously streams ADC reading, voltage, and calculated temperature (°C) via Serial Communication.
+
+---
+
+## 🛠️ Hardware Requirements
+| Component | Quantity | Description |
+| :--- | :--- | :--- |
+| **Arduino Uno R3** | 1 | Microcontroller Board |
+| **TMP36 Sensor** | 1 | Precision Temperature Sensor |
+| **Piezzo Buzzer** | 1 | Audio Alert Indicator |
+| **LEDs / Relay Module** | 4 | Represents Heating Bulbs / Load Circuits |
+| **Resistors** | As required | Current limiting resistors for LEDs/Buzzer |
+| **Breadboard & Wires** | 1 Set | Circuit Interconnections |
+
+---
+
+## 🔌 Circuit Pin Mapping
+* **TMP36 Vout Pin** $\rightarrow$ Arduino **A1**
+* **Buzzer (+ Pin)** $\rightarrow$ Arduino **Digital Pin 6**
+* **Heating Bulbs / Relays** $\rightarrow$ Arduino **Digital Pins 2, 3, 4, 5**
+* **Sensor VCC / GND** $\rightarrow$ Arduino **5V / GND**
+
+---
+
+## 📊 System Logic & Flowchart
+
+1. **Read Sensor:** Read analog raw value from TMP36 via Analog Pin `A1`.
+2. **Convert Value:** 
+   $$\text{Voltage} = \text{Reading} \times \left(\frac{5.0}{1024.0}\right)$$
+   $$\text{Temperature (°C)} = \frac{\text{Voltage} - 0.5}{0.01}$$
+3. **Threshold Condition:**
+   * **If Temp $\le$ 26.0°C:** Turn ON Light Bulbs (`Pins 2, 3, 4, 5 HIGH`) + Single Beep Alert (`Pin 6 HIGH for 150ms`).
+   * **If Temp > 26.0°C:** Turn OFF Light Bulbs (`Pins 2, 3, 4, 5 LOW`).
+
+---🚀 Future Scope
+Integration of I2C LCD Display or OLED for local visual metrics.
+
+Adding GSM/Wi-Fi Module (ESP8266/ESP32) for real-time IoT monitoring and SMS alerts to farm owners.
+
+Adding a DHT11/DHT22 sensor to monitor and control farm humidity alongside temperature.
